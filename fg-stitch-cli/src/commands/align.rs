@@ -59,7 +59,7 @@ impl ValueEnum for PrimaryPickingStrategy {
     }
 }
 
-/// Perfoms alignment of a long reads against a reference/expected vector/plasmid/construct.
+/// Performs alignment of a long reads against a reference/expected vector/plasmid/construct.
 ///
 /// The alignment extends the traditional alignment algorithms by introducing a "jump"
 /// move/operator, whereby the alignment is able to jump anywhere in the reference sequence for a
@@ -98,11 +98,11 @@ pub struct Align {
     #[clap(long, short = 'f', display_order = 1)]
     reads_fastq: PathBuf,
 
-    /// The path to the referece vector/plasmid/construct FASTA sequence.
+    /// The path to the reference vector/plasmid/construct FASTA sequence.
     #[clap(long, short = 'r', display_order = 2)]
     ref_fasta: PathBuf,
 
-    /// Align to both strands of the reference simulataneously.
+    /// Align to both strands of the reference simultaneously.
     #[clap(long, short = 'd', default_value = "false", display_order = 3)]
     double_strand: bool,
 
@@ -140,7 +140,7 @@ pub struct Align {
     #[clap(long, short = 'x', default_value = "true", display_order = 8)]
     pre_align_subset_contigs: bool,
 
-    /// Use soft-clipping for all alignments, otherwise secondary alignemnts will use hard-clipping
+    /// Use soft-clipping for all alignments, otherwise secondary alignments will use hard-clipping
     #[clap(long, short = 'S', default_value = "false", display_order = 10)]
     soft_clip: bool,
 

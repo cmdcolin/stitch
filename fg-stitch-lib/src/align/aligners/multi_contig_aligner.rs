@@ -185,7 +185,7 @@ impl<'a, F: MatchFunc> MultiContigAligner<'a, F> {
             Some(indexes) => {
                 assert!(!indexes.is_empty(), "Subsetted to an empty set of contigs");
                 // Find the contigs to just those in the set of indexes, and keep the ones
-                // that were excluded so we can restor the contigs later
+                // that were excluded so we can restore the contigs later
                 let mut included = Vec::with_capacity(indexes.len());
                 let mut excluded = Vec::with_capacity(self.len() - indexes.len());
                 while !self.contigs.is_empty() {
@@ -713,7 +713,7 @@ pub mod tests {
         assert_alignment(&alignment, 5, 15, 0, 10, 10 - 1, 1, "5A5=1c5j5=", 10);
 
         // jump to a different contig is prioritized
-        // starts by aligning to x3 fully, then jumping to x1 and alinging to the last 5bp of x1
+        // starts by aligning to x3 fully, then jumping to x1 and aligning to the last 5bp of x1
         for contig in &mut aligner.contigs {
             contig.aligner.scoring = contig.aligner.scoring.set_jump_scores(-2, -2, -1);
         }

@@ -932,7 +932,7 @@ pub mod tests {
         assert_alignment(&alignment, 0, 8, 0, 8, 7 - 1, "5=1X2=", 8);
     }
 
-    /// Identical sequences, except one samll deletion
+    /// Identical sequences, except one small deletion
     #[rstest]
     fn test_small_deletion() {
         let x = s("AACC-GTT");
@@ -942,7 +942,7 @@ pub mod tests {
         assert_alignment(&alignment, 0, 7, 0, 8, 7 - (5 + 1), "4=1D3=", 8);
     }
 
-    /// Identical sequences, except one samll insertion
+    /// Identical sequences, except one small insertion
     #[rstest]
     fn test_small_insertion() {
         let x = s("AACCGGTT");

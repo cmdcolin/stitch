@@ -14,7 +14,7 @@ use std::{
 /// 128 KB default buffer size, same as pigz.
 pub const GZ_BUFSIZE: usize = 64 * (1 << 10) * 2;
 
-/// The number of FASTQ records to includ per chunk, scaled but the # of CPUS.
+/// The number of FASTQ records to include per chunk, scaled but the # of CPUS.
 pub const RECORDS_PER_CHUNK_PER_THREAD: usize = 10;
 
 /// The number of chunks allowed in a channel
@@ -89,7 +89,7 @@ pub struct FastqThreadReader {
     pub handle: JoinHandle<Result<()>>,
     /// The channel that will be receiving [`AlignmentsMessage`]s.
     pub to_align_rx: Receiver<InputMessage>,
-    /// The channel that will be receiving oneshot recivers of chunks of alignments
+    /// The channel that will be receiving oneshot receivers of chunks of alignments
     pub to_output_rx: Receiver<Receiver<OutputMessage>>,
 }
 
